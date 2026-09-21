@@ -13,18 +13,25 @@ requirements this repo implements.
 
 ## Structure
 
+All website files live under `public/` - this is the actual deployed asset directory. Nothing
+outside `public/` (this README, `LICENSE`, `wrangler.jsonc`, `.git`) is ever uploaded; the whole
+point of the `public/` split is to make that structurally impossible rather than dependent on a
+deploy-tool setting being configured correctly.
+
 ```
-index.html          Home page
-install/macos.html  macOS installation guide
-install/windows.html  Windows installation guide
-install/linux.html  Headless Linux installation guide
-security.html       Security overview
-faq.html             FAQ
-assets/styles.css   Shared stylesheet
-assets/app.js       Small client-side conveniences (nav highlighting, copy-to-clipboard) - no network calls
-assets/images/      Static images (currently empty)
-_headers             Cloudflare Pages response headers (CSP, etc.)
-_redirects            Cloudflare Pages redirects (deliberately no root redirect - see the file's own comment)
+public/
+├── index.html          Home page
+├── install/macos.html  macOS installation guide
+├── install/windows.html  Windows installation guide
+├── install/linux.html  Headless Linux installation guide
+├── security.html       Security overview
+├── faq.html             FAQ
+├── assets/styles.css   Shared stylesheet
+├── assets/app.js       Small client-side conveniences (nav highlighting, copy-to-clipboard) - no network calls
+├── assets/images/      Static images (currently empty)
+├── _headers             Response headers (CSP, etc.) - Cloudflare applies this from the assets root
+└── _redirects            Redirects (deliberately no root redirect - see the file's own comment)
+wrangler.jsonc            Cloudflare Workers config - assets.directory points at ./public
 ```
 
 Download links throughout the install pages are placeholders (`#download-placeholder`, marked
@@ -33,41 +40,54 @@ release URLs are available - do not point them at anything else in the meantime.
 
 ## Local preview
 
-No build step. Serve the directory with any static file server, e.g.:
+No build step. Serve the `public/` directory with any static file server, e.g.:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory public
 ```
 
-Then open `http://localhost:8000`.
+Then open `http://localhost:8000`. Or use Wrangler's own dev server (matches production routing
+exactly, including `_headers`/`_redirects`):
 
-## Deploying to Cloudflare Pages
+```bash
+npx wrangler dev
+```
 
-1. In the Cloudflare dashboard, go to **Workers & Pages → Create → Pages → Connect to Git** and
-   select this repository (`Zim95/browseterm-marketing`).
-2. Build settings:
-   - **Framework preset:** None
-   - **Build command:** (leave empty - there is no build step)
-   - **Build output directory:** `/` (repository root)
-3. Deploy. Cloudflare Pages automatically picks up `_headers` and `_redirects` from the repo
-   root.
+## Deploying (Cloudflare Workers static assets)
+
+This project deploys as a Worker with static assets (`wrangler.jsonc`'s `assets.directory:
+"./public"`), not a Pages Git-connected project - `public/` is the ONLY directory ever uploaded,
+by construction, regardless of what else is sitting in the repo root.
+
+```bash
+npx wrangler deploy
+```
+
+Sanity-check any config change before deploying for real:
+
+```bash
+npx wrangler deploy --dry-run    # prints the file count/size that would upload
+find public -type f | sort       # cross-check against what's actually in the assets dir
+```
+
+After deploying, confirm nothing outside `public/` is reachable, e.g.
+`curl -I https://<deployed-host>/.git/config` and `curl -I https://<deployed-host>/README.md`
+should both return `404`.
 
 ## Custom domain setup (`browseterm.puhtaeto.com`)
 
 **Claude must not perform this step.** DNS changes for `puhtaeto.com` require the domain owner's
 direct action. This section documents exactly what a human needs to do.
 
-1. In the Cloudflare Pages project's **Custom domains** tab, add `browseterm.puhtaeto.com`.
+1. In the Cloudflare dashboard, open this Worker (**Workers & Pages → browseterm-marketing**) and
+   go to its **Settings → Domains & Routes** (or **Triggers → Custom Domains**, depending on
+   dashboard version), and add `browseterm.puhtaeto.com`.
 2. Cloudflare will show the exact DNS record to create. If `puhtaeto.com`'s DNS is already
-   managed by Cloudflare, it offers to add the record automatically (a `CNAME` record for
-   `browseterm` pointing at the Pages project's `*.pages.dev` hostname) - review and approve it,
+   managed by Cloudflare, it offers to add the record automatically - review and approve it,
    don't apply it blindly.
 3. If `puhtaeto.com`'s DNS is NOT yet on Cloudflare, add manually at whichever registrar/DNS
-   provider is authoritative:
-   - **Type:** `CNAME`
-   - **Name/Host:** `browseterm`
-   - **Value/Target:** the `*.pages.dev` hostname Cloudflare Pages assigns this project (shown in
-     the dashboard once the project is created - do not guess it in advance)
+   provider is authoritative, using the exact target Cloudflare's dashboard shows for this Worker
+   once the custom domain is added there (do not guess it in advance).
    - **Proxy status:** Proxied (orange cloud), if the DNS provider is Cloudflare itself
 4. Do **not** point `browseterm.puhtaeto.com` at `app.browseterm.puhtaeto.com` or at the Contabo
    ingress IP used by `browseterm-server` - they are two independent applications with two
