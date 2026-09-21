@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security — Browseterm</title>
+<meta name="description" content="How Browseterm is designed to keep your machine and data secure.">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav aria-label="Primary">
+    <a class="brand" href="/">Browseterm</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/install/macos.html">Install</a></li>
+      <li><a href="/security.html">Security</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <h1>Security</h1>
+  <p class="lede">
+    Browseterm is built around one rule: your machine is never reachable from the outside, and
+    Cloud never holds a copy of your workspace data.
+  </p>
+
+  <h2>Your machine only ever calls out</h2>
+  <p>
+    The Browseterm software on your machine opens a single outbound, encrypted connection to
+    Browseterm Cloud. Cloud can send commands over that already-open connection, but nothing on
+    Cloud — and nothing on the public internet — can open a new connection into your machine.
+    Your local management interface is never exposed publicly.
+  </p>
+
+  <h2>Every device has its own credential</h2>
+  <p>
+    Each machine you register gets its own independent, revocable credential, scoped only to
+    that machine. No machine you control ever holds a shared or global credential that could
+    affect any other user's account or device.
+  </p>
+
+  <h2>Terminal traffic is ticketed, not open</h2>
+  <p>
+    When you open a terminal in your browser, Cloud issues a short-lived, single-use ticket
+    bound to your account, your device, and that specific workspace. The ticket is required to
+    connect and expires quickly — possessing the connection URL alone is never enough.
+  </p>
+
+  <h2>Your workspace data stays on your machine</h2>
+  <p>
+    Workloads run entirely on the machine you registered. When you save a workspace so it can be
+    restored later, only the resulting saved image is stored — Cloud tracks metadata about your
+    devices, workspaces, and saved images; it does not run your workloads or hold a live copy of
+    your working files.
+  </p>
+
+  <h2>Reporting a security issue</h2>
+  <p>
+    If you believe you've found a security issue in Browseterm, please report it privately
+    rather than opening a public issue. Contact details will be published here before general
+    availability.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 Browseterm.</span>
+    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>

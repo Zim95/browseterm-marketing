@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects file for browseterm.puhtaeto.com.
+#
+# Deliberately empty of any rule that sends "/" (or any other path on this site) to
+# app.browseterm.puhtaeto.com. This site IS the root for browseterm.puhtaeto.com - only the
+# explicit "Open Browseterm" links in the page content point at the app domain. Do not add a
+# blanket redirect here; that is a separate, intentionally distinct decision from the CTA links.

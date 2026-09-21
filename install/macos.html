@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Browseterm on macOS</title>
+<meta name="description" content="How to install Browseterm on macOS.">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav aria-label="Primary">
+    <a class="brand" href="/">Browseterm</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/install/macos.html">Install</a></li>
+      <li><a href="/security.html">Security</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <h1>Install Browseterm on macOS</h1>
+  <p class="lede">
+    Browseterm on macOS runs your workspaces inside a dedicated, managed Ubuntu virtual machine
+    on your Mac. No Docker Desktop required.
+  </p>
+
+  <nav aria-label="Choose your operating system" class="cta-row">
+    <a class="button button-primary" href="/install/macos.html" aria-current="page">macOS</a>
+    <a class="button button-secondary" href="/install/windows.html">Windows</a>
+    <a class="button button-secondary" href="/install/linux.html">Linux</a>
+  </nav>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>macOS on Apple Silicon (arm64) or Intel (amd64)</li>
+    <li>Hardware virtualization support (built in on all supported Macs)</li>
+    <li>An active internet connection for setup and to sign in to Browseterm Cloud</li>
+  </ul>
+
+  <h2>Download</h2>
+  <p>
+    <a class="download-placeholder" href="#download-placeholder" aria-disabled="true">
+      Download Browseterm for macOS (arm64) — release coming soon
+    </a>
+  </p>
+  <p>
+    <a class="download-placeholder" href="#download-placeholder" aria-disabled="true">
+      Download Browseterm for macOS (Intel) — release coming soon
+    </a>
+  </p>
+  <!-- TODO: replace with the real signed installer URL once release artifacts exist -->
+
+  <h2>Setup</h2>
+  <ol class="steps">
+    <li>Open the downloaded Browseterm Desktop installer and follow the on-screen macOS
+    installation/permission prompts.</li>
+    <li>On first launch, Browseterm checks for the Multipass virtualization tool. If it isn't
+    already installed, Browseterm guides you through the official, signed Multipass
+    installation.</li>
+    <li>Choose how much CPU, memory, and storage to give Browseterm from your Mac's resources —
+    you can change this later.</li>
+    <li>Browseterm creates a dedicated Ubuntu virtual machine and starts your local Browseterm
+    environment inside it.</li>
+    <li>Sign in with your Browseterm Cloud account to link this Mac as a device.</li>
+    <li>Open <a href="https://app.browseterm.puhtaeto.com">app.browseterm.puhtaeto.com</a> in
+    your browser and create your first workspace.</li>
+  </ol>
+
+  <div class="callout">
+    <strong>Starts automatically.</strong> Browseterm registers a background login item so your
+    environment comes back up automatically after a restart.
+  </div>
+
+  <h2>Uninstalling</h2>
+  <p>
+    Browseterm's uninstaller removes the virtual machine and background service. Your workspace
+    data can optionally be preserved or removed — you'll be asked which you want.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 Browseterm.</span>
+    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>

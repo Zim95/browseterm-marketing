@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Browseterm</title>
+<meta name="description" content="Frequently asked questions about Browseterm.">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav aria-label="Primary">
+    <a class="brand" href="/">Browseterm</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/install/macos.html">Install</a></li>
+      <li><a href="/security.html">Security</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <h1>Frequently asked questions</h1>
+
+  <div class="faq-item">
+    <h2>What is Browseterm, in one sentence?</h2>
+    <p>Software you install on your own Mac, Windows PC, or Linux machine that turns it into a
+    Linux workspace you can open and use from any web browser.</p>
+  </div>
+
+  <div class="faq-item">
+    <h2>Does my code/data leave my machine?</h2>
+    <p>No. Your workspaces run entirely on the machine you install Browseterm on. Browseterm
+    Cloud only coordinates login, device tracking, and commands — it does not run your workloads
+    or store a live copy of your files.</p>
+  </div>
+
+  <div class="faq-item">
+    <h2>Do I need Docker Desktop?</h2>
+    <p>No. On macOS and Windows, Browseterm manages its own dedicated, isolated virtual machine.
+    On Linux, Browseterm runs natively without Docker at all.</p>
+  </div>
+
+  <div class="faq-item">
+    <h2>Can I use more than one machine?</h2>
+    <p>Yes. You can register multiple devices on your account. At any time, one device is your
+    active device — the one new workspaces are created or resumed on. Workspaces you've saved on
+    an inactive device stay saved and can be resumed once that device is active again.</p>
+  </div>
+
+  <div class="faq-item">
+    <h2>What happens if my machine is off or asleep?</h2>
+    <p>Your machine has to be on and connected for its workspaces to be reachable. Browseterm is
+    honest about this: it will never claim a workspace is available when the machine hosting it
+    isn't actually online.</p>
+  </div>
+
+  <div class="faq-item">
+    <h2>Is my machine exposed to the internet?</h2>
+    <p>No. Your machine only ever makes outbound connections to Browseterm Cloud — nothing can
+    connect into your machine from the outside. See the <a href="/security.html">Security</a>
+    page for details.</p>
+  </div>
+
+  <div class="faq-item">
+    <h2>Is Browseterm free?</h2>
+    <p>Pricing details will be published here before general availability.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 Browseterm.</span>
+    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Browseterm on Windows</title>
+<meta name="description" content="How to install Browseterm on Windows.">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav aria-label="Primary">
+    <a class="brand" href="/">Browseterm</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/install/macos.html">Install</a></li>
+      <li><a href="/security.html">Security</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <h1>Install Browseterm on Windows</h1>
+  <p class="lede">
+    Browseterm on Windows runs your workspaces inside a dedicated, managed Ubuntu virtual
+    machine. It does not require Docker Desktop or your own WSL distribution.
+  </p>
+
+  <nav aria-label="Choose your operating system" class="cta-row">
+    <a class="button button-secondary" href="/install/macos.html">macOS</a>
+    <a class="button button-primary" href="/install/windows.html" aria-current="page">Windows</a>
+    <a class="button button-secondary" href="/install/linux.html">Linux</a>
+  </nav>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>Windows 10 or later, 64-bit</li>
+    <li>Hardware virtualization enabled in your system firmware/BIOS</li>
+    <li>Administrator access, for the one-time virtualization setup</li>
+    <li>An active internet connection for setup and to sign in to Browseterm Cloud</li>
+  </ul>
+
+  <h2>Download</h2>
+  <p>
+    <a class="download-placeholder" href="#download-placeholder" aria-disabled="true">
+      Download Browseterm for Windows (64-bit) — release coming soon
+    </a>
+  </p>
+  <!-- TODO: replace with the real signed installer URL once release artifacts exist -->
+
+  <h2>Setup</h2>
+  <ol class="steps">
+    <li>Run the downloaded Browseterm Desktop installer as Administrator.</li>
+    <li>If hardware virtualization isn't already enabled, Browseterm will tell you and explain
+    the one-time firmware setting to turn on — a restart is required after enabling it.</li>
+    <li>Browseterm guides you through the official Multipass installation if it isn't already
+    present.</li>
+    <li>Choose how much CPU, memory, and storage to give Browseterm from your PC's resources —
+    you can change this later.</li>
+    <li>Browseterm creates a dedicated Ubuntu virtual machine and starts your local Browseterm
+    environment inside it.</li>
+    <li>Sign in with your Browseterm Cloud account to link this PC as a device.</li>
+    <li>Open <a href="https://app.browseterm.puhtaeto.com">app.browseterm.puhtaeto.com</a> in
+    your browser and create your first workspace.</li>
+  </ol>
+
+  <div class="callout">
+    <strong>Starts automatically.</strong> Browseterm registers itself to start automatically
+    when you sign in to Windows.
+  </div>
+
+  <h2>Uninstalling</h2>
+  <p>
+    Use "Add or remove programs" to uninstall Browseterm. You'll be asked whether to keep or
+    remove your workspace data.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 Browseterm.</span>
+    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>

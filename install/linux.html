@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Browseterm on Linux</title>
+<meta name="description" content="How to install Browseterm on headless Linux.">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav aria-label="Primary">
+    <a class="brand" href="/">Browseterm</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/install/macos.html">Install</a></li>
+      <li><a href="/security.html">Security</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <h1>Install Browseterm on Linux</h1>
+  <p class="lede">
+    Browseterm on Linux runs natively, managed by a headless <code>browseterm</code>
+    command-line tool — no GUI and no Docker required.
+  </p>
+
+  <nav aria-label="Choose your operating system" class="cta-row">
+    <a class="button button-secondary" href="/install/macos.html">macOS</a>
+    <a class="button button-secondary" href="/install/windows.html">Windows</a>
+    <a class="button button-primary" href="/install/linux.html" aria-current="page">Linux</a>
+  </nav>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>A supported 64-bit Linux distribution (see release notes for the current list)</li>
+    <li>Root or sudo access, for the one-time system service setup</li>
+    <li>An active internet connection for setup and to sign in to Browseterm Cloud</li>
+  </ul>
+
+  <h2>Download and install</h2>
+  <p>
+    <a class="download-placeholder" href="#download-placeholder" aria-disabled="true">
+      Download the Browseterm CLI — release coming soon
+    </a>
+  </p>
+  <!-- TODO: replace with the real signed CLI download URL once release artifacts exist -->
+
+  <h2>Setup</h2>
+  <p>Interactive setup asks how many CPU cores, how much memory, and how much storage to
+  allocate, with safe recommended defaults:</p>
+  <pre><code id="setup-command">sudo browseterm setup</code></pre>
+  <p><button type="button" class="button button-secondary" data-copy-target="setup-command">Copy command</button></p>
+
+  <p>For scripted/unattended installs, pass the resource allocation directly:</p>
+  <pre><code id="noninteractive-command">sudo browseterm setup --cpus 4 --memory 8Gi --storage 50Gi --non-interactive</code></pre>
+  <p><button type="button" class="button button-secondary" data-copy-target="noninteractive-command">Copy command</button></p>
+
+  <ol class="steps">
+    <li>Run <code>browseterm setup</code> (see above). This installs a pinned version of k3s as
+    a systemd service and applies the Browseterm application chart.</li>
+    <li>Run <code>browseterm activate</code> to link this machine to your Browseterm Cloud
+    account. Since this is a headless machine, it prints a short code and a verification URL —
+    open that URL from any browser to approve it.</li>
+    <li>Open <a href="https://app.browseterm.puhtaeto.com">app.browseterm.puhtaeto.com</a> in
+    your browser and create your first workspace.</li>
+  </ol>
+
+  <h2>Managing the service</h2>
+  <pre><code>browseterm status
+browseterm logs
+browseterm stop
+browseterm start
+browseterm diagnostics</code></pre>
+
+  <h2>Uninstalling</h2>
+  <pre><code>sudo browseterm uninstall</code></pre>
+  <p>You'll be asked whether to preserve or remove your workspace data.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 Browseterm.</span>
+    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>
