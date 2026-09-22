@@ -1,97 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Browseterm — Your own machine, in your browser</title>
-<meta name="description" content="Browseterm turns your own computer into browser-accessible Linux workspaces. Your machine does the work; Browseterm Cloud is only the control plane.">
-<link rel="stylesheet" href="./assets/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browseterm turns your own computer into secure, browser-accessible Linux workspaces.">
+  <title>Browseterm — Your machine. Your cloud workspace.</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23152a22'/%3E%3Cpath d='m17 21 11 11-11 11M32 43h15' fill='none' stroke='%23A8FBD3' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <nav aria-label="Primary">
-    <a class="brand" href="/">Browseterm</a>
-    <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/install/macos.html">Install</a></li>
-      <li><a href="/security.html">Security</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
-    </ul>
-  </nav>
-</header>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="nav shell">
+    <a class="brand" href="/" aria-label="Browseterm home">
+      <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+      <span>browseterm</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a class="nav-link" href="#how-it-works">How it works</a>
+      <a class="nav-link" href="/install/">Install</a>
+      <a class="button button-small button-ghost" href="https://app.browseterm.puhtaeto.com">Open Browseterm <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-<main id="main">
-  <h1>Your own machine, in your browser.</h1>
-  <p class="tagline">
-    Your lightweight workspace environment can now live on the cloud. Use your machines as
-    resources and access the ephemeral workspaces in the cloud.
-  </p>
-  <p class="lede">
-    Browseterm turns a computer you already own into a browser-accessible Linux workspace.
-    Install Browseterm once on your Mac, Windows PC, or Linux machine, and you get real
-    terminals you can reach from any browser — without renting cloud compute or exposing your
-    machine directly to the internet.
-  </p>
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> Your hardware. Accessible anywhere.</div>
+        <h1>Your Linux workspace,<br><span>in any browser.</span></h1>
+        <p class="hero-lede">Browseterm turns the computer you already own into secure, browser-accessible development workspaces—without renting another cloud machine.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/install/">Install Browseterm <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="https://app.browseterm.puhtaeto.com">Open Browseterm <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="platforms" aria-label="Supported platforms">
+          <span>macOS</span><i></i><span>Windows</span><i></i><span>Linux</span>
+        </div>
+      </div>
 
-  <div class="cta-row">
-    <a class="button button-primary" href="https://app.browseterm.puhtaeto.com">Open Browseterm</a>
-    <a class="button button-secondary" href="/install/macos.html">See installation guide</a>
-  </div>
+      <div class="terminal-wrap" aria-label="Example Browseterm terminal">
+        <div class="terminal-glow"></div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="terminal-title">workspace-01 / terminal</div>
+            <div class="secure"><span>●</span> connected</div>
+          </div>
+          <div class="terminal-body">
+            <p class="success">✓ connected to workspace-01</p>
+            <p><span class="machine">user@workspace-01</span>:<span class="path">~</span>$ pwd</p>
+            <p class="muted">/home/user</p>
+            <p><span class="machine">user@workspace-01</span>:<span class="path">~</span>$ ls</p>
+            <div class="file-list" aria-label="Workspace files">
+              <span>projects/</span><span>downloads/</span><span>notes.txt</span>
+            </div>
+            <p><span class="machine">user@workspace-01</span>:<span class="path">~</span>$ whoami</p>
+            <p class="muted">user</p>
+            <p><span class="machine">user@workspace-01</span>:<span class="path">~</span>$ <span class="cursor"></span></p>
+          </div>
+        </div>
+        <div class="float-card float-a"><span>01</span><strong>Browser terminal</strong><small>real Linux shell</small></div>
+        <div class="float-card float-b"><span>02</span><strong>Your machine</strong><small>local CPU & memory</small></div>
+      </div>
+    </section>
 
-  <h2>Your machine does the work. Cloud is only the control plane.</h2>
-  <p>
-    This is the core of how Browseterm is built: your terminals, files, and everything you run
-    live entirely on <strong>your own machine</strong>. Browseterm Cloud never runs your
-    workloads and never stores your workspace data — it only handles account login, keeps track
-    of which of your devices is active, and relays commands like "create a new workspace" to the
-    Browseterm software running on your machine. Your machine connects out to Cloud, never the
-    other way around: nothing on Cloud can reach into your machine on its own.
-  </p>
+    <section class="trust-strip" aria-label="Product principles">
+      <div class="shell trust-inner">
+        <p>Built for people who want cloud convenience without giving up their own compute.</p>
+        <div><span>Private by design</span><span>No inbound ports</span><span>Runs on your machine</span></div>
+      </div>
+    </section>
 
-  <div class="card-grid">
-    <div class="card">
-      <h3>You install once</h3>
-      <p>Browseterm sets up an isolated, managed environment on your machine — a lightweight
-      Linux virtual machine on macOS and Windows, or a native service on Linux — and keeps it
-      running in the background.</p>
-    </div>
-    <div class="card">
-      <h3>Cloud is the control plane</h3>
-      <p>Sign in once through Browseterm Cloud. Cloud tracks your devices and workspaces and
-      issues the commands your machine carries out — it is never where your terminal sessions
-      or files actually live.</p>
-    </div>
-    <div class="card">
-      <h3>Reach it from any browser</h3>
-      <p>Open a terminal to your machine from any browser, on any device, without configuring
-      port forwarding or exposing your home network.</p>
-    </div>
-  </div>
+    <section class="section shell" id="how-it-works">
+      <div class="section-heading">
+        <span class="section-number">01 / HOW IT WORKS</span>
+        <h2>Cloud control.<br>Local power.</h2>
+        <p>The dashboard lives in the cloud. Your actual terminals and files stay on the machine you choose.</p>
+      </div>
+      <div class="steps">
+        <article>
+          <div class="step-icon">⌁</div>
+          <span>01</span>
+          <h3>Install the agent</h3>
+          <p>Connect your Mac, Windows PC, or Linux machine and choose how many resources Browseterm may use.</p>
+        </article>
+        <article>
+          <div class="step-icon">◇</div>
+          <span>02</span>
+          <h3>Create a workspace</h3>
+          <p>Start, hibernate, resume, or remove Linux workspaces from the Browseterm dashboard.</p>
+        </article>
+        <article>
+          <div class="step-icon">↗</div>
+          <span>03</span>
+          <h3>Open it anywhere</h3>
+          <p>Launch a terminal from your browser while the compute and storage remain on your active device.</p>
+        </article>
+      </div>
+    </section>
 
-  <h2>Why not just rent a cloud VM?</h2>
-  <p>
-    You already own a capable computer. Browseterm puts it to work as your development
-    environment instead of paying for — and re-configuring — a separate machine somewhere else.
-    Your data stays on hardware you control.
-  </p>
+    <section class="section feature-section">
+      <div class="shell feature-grid">
+        <div class="feature-copy">
+          <span class="section-number">02 / BUILT DIFFERENTLY</span>
+          <h2>A personal cloud that stays personal.</h2>
+          <p>Most browser terminals rent you somebody else's machine. Browseterm securely connects you to your own.</p>
+          <ul>
+            <li><span>✓</span><div><strong>Workspaces that pause</strong><small>Hibernate when you are done and release local resources.</small></div></li>
+            <li><span>✓</span><div><strong>Switch active devices</strong><small>Move between machines without mixing workloads or quotas.</small></div></li>
+            <li><span>✓</span><div><strong>Browser-first access</strong><small>Your terminal is available wherever you can securely sign in.</small></div></li>
+          </ul>
+        </div>
+        <div class="architecture-card">
+          <div class="arch-label">CONNECTION PATH</div>
+          <div class="arch-node accent"><b>Browser</b><small>app.browseterm</small></div>
+          <div class="arch-line"><span>authenticated</span></div>
+          <div class="arch-node"><b>Cloud control plane</b><small>identity · commands · state</small></div>
+          <div class="arch-line"><span>secure outbound connection</span></div>
+          <div class="arch-node local"><b>Your device</b><small>terminal · files · compute</small></div>
+        </div>
+      </div>
+    </section>
 
-  <div class="callout callout-motivation">
-    Your lightweight workspace environment can now live on the cloud. Use your machines as
-    resources and access the ephemeral workspaces in the cloud.
-  </div>
+    <section class="cta shell">
+      <div>
+        <span class="section-number">READY WHEN YOU ARE</span>
+        <h2>Bring your machine.<br>We'll bring the browser.</h2>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-primary" href="/install/">Install Browseterm <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="https://app.browseterm.puhtaeto.com">Already installed? Open Browseterm ↗</a>
+      </div>
+    </section>
+  </main>
 
-  <div class="cta-row">
-    <a class="button button-primary" href="https://app.browseterm.puhtaeto.com">Open Browseterm</a>
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span>&copy; 2026 Browseterm.</span>
-    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
-  </div>
-</footer>
-<script src="/assets/app.js"></script>
+  <footer class="footer shell">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span><span>browseterm</span></a>
+    <p>Part of <strong>Puhtaeto</strong> — pocket-sized software.</p>
+    <p>© <span id="year"></span> Puhtaeto</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

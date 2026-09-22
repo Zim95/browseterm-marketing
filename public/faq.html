@@ -1,81 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ — Browseterm</title>
-<meta name="description" content="Frequently asked questions about Browseterm.">
-<link rel="stylesheet" href="/assets/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frequently asked questions about Browseterm.">
+  <title>FAQ — Browseterm</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23152a22'/%3E%3Cpath d='m17 21 11 11-11 11M32 43h15' fill='none' stroke='%23A8FBD3' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <nav aria-label="Primary">
-    <a class="brand" href="/">Browseterm</a>
-    <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/install/macos.html">Install</a></li>
-      <li><a href="/security.html">Security</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
-    </ul>
-  </nav>
-</header>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="nav shell">
+    <a class="brand" href="/" aria-label="Browseterm home">
+      <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+      <span>browseterm</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/install/">Install</a>
+      <a class="nav-link" href="/security.html">Security</a>
+      <a class="nav-link" href="/faq.html" aria-current="page">FAQ</a>
+      <a class="button button-small button-ghost" href="https://app.browseterm.puhtaeto.com">Open Browseterm <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-<main id="main">
-  <h1>Frequently asked questions</h1>
+  <main class="install-main shell">
+    <div class="install-intro">
+      <span class="section-number">FAQ</span>
+      <h1>Frequently asked questions.</h1>
+    </div>
 
-  <div class="faq-item">
-    <h2>What is Browseterm, in one sentence?</h2>
-    <p>Software you install on your own Mac, Windows PC, or Linux machine that turns it into a
-    Linux workspace you can open and use from any web browser.</p>
-  </div>
+    <div class="content-list">
+      <article class="content-item">
+        <h2>What is Browseterm, in one sentence?</h2>
+        <p>Software you install on your own Mac, Windows PC, or Linux machine that turns it into a
+        Linux workspace you can open and use from any web browser.</p>
+      </article>
 
-  <div class="faq-item">
-    <h2>Does my code/data leave my machine?</h2>
-    <p>No. Your workspaces run entirely on the machine you install Browseterm on. Browseterm
-    Cloud only coordinates login, device tracking, and commands — it does not run your workloads
-    or store a live copy of your files.</p>
-  </div>
+      <article class="content-item">
+        <h2>Does my code/data leave my machine?</h2>
+        <p>No. Your workspaces run entirely on the machine you install Browseterm on. Browseterm
+        Cloud only coordinates login, device tracking, and commands — it does not run your
+        workloads or store a live copy of your files.</p>
+      </article>
 
-  <div class="faq-item">
-    <h2>Do I need Docker Desktop?</h2>
-    <p>No. On macOS and Windows, Browseterm manages its own dedicated, isolated virtual machine.
-    On Linux, Browseterm runs natively without Docker at all.</p>
-  </div>
+      <article class="content-item">
+        <h2>Do I need Docker Desktop?</h2>
+        <p>No. On macOS and Windows, Browseterm manages its own dedicated, isolated virtual
+        machine. On Linux, Browseterm runs natively without Docker at all.</p>
+      </article>
 
-  <div class="faq-item">
-    <h2>Can I use more than one machine?</h2>
-    <p>Yes. You can register multiple devices on your account. At any time, one device is your
-    active device — the one new workspaces are created or resumed on. Workspaces you've saved on
-    an inactive device stay saved and can be resumed once that device is active again.</p>
-  </div>
+      <article class="content-item">
+        <h2>Can I use more than one machine?</h2>
+        <p>Yes. You can register multiple devices on your account. At any time, one device is your
+        active device — the one new workspaces are created or resumed on. Workspaces you've saved
+        on an inactive device stay saved and can be resumed once that device is active again.</p>
+      </article>
 
-  <div class="faq-item">
-    <h2>What happens if my machine is off or asleep?</h2>
-    <p>Your machine has to be on and connected for its workspaces to be reachable. Browseterm is
-    honest about this: it will never claim a workspace is available when the machine hosting it
-    isn't actually online.</p>
-  </div>
+      <article class="content-item">
+        <h2>What happens if my machine is off or asleep?</h2>
+        <p>Your machine has to be on and connected for its workspaces to be reachable. Browseterm
+        is honest about this: it will never claim a workspace is available when the machine
+        hosting it isn't actually online.</p>
+      </article>
 
-  <div class="faq-item">
-    <h2>Is my machine exposed to the internet?</h2>
-    <p>No. Your machine only ever makes outbound connections to Browseterm Cloud — nothing can
-    connect into your machine from the outside. See the <a href="/security.html">Security</a>
-    page for details.</p>
-  </div>
+      <article class="content-item">
+        <h2>Is my machine exposed to the internet?</h2>
+        <p>No. Your machine only ever makes outbound connections to Browseterm Cloud — nothing can
+        connect into your machine from the outside. See the <a href="/security.html">Security</a>
+        page for details.</p>
+      </article>
 
-  <div class="faq-item">
-    <h2>Is Browseterm free?</h2>
-    <p>Pricing details will be published here before general availability.</p>
-  </div>
-</main>
+      <article class="content-item">
+        <h2>Is Browseterm free?</h2>
+        <p>Pricing details will be published here before general availability.</p>
+      </article>
+    </div>
+  </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span>&copy; 2026 Browseterm.</span>
-    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
-  </div>
-</footer>
-<script src="/assets/app.js"></script>
+  <footer class="footer shell">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span><span>browseterm</span></a>
+    <p>Part of <strong>Puhtaeto</strong> — pocket-sized software.</p>
+    <p>© <span id="year"></span> Puhtaeto</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

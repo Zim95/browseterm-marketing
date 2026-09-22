@@ -1,77 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Security — Browseterm</title>
-<meta name="description" content="How Browseterm is designed to keep your machine and data secure.">
-<link rel="stylesheet" href="/assets/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Browseterm is designed to keep your machine and data secure.">
+  <title>Security — Browseterm</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23152a22'/%3E%3Cpath d='m17 21 11 11-11 11M32 43h15' fill='none' stroke='%23A8FBD3' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <nav aria-label="Primary">
-    <a class="brand" href="/">Browseterm</a>
-    <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/install/macos.html">Install</a></li>
-      <li><a href="/security.html">Security</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
-    </ul>
-  </nav>
-</header>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="nav shell">
+    <a class="brand" href="/" aria-label="Browseterm home">
+      <span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span>
+      <span>browseterm</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/install/">Install</a>
+      <a class="nav-link" href="/security.html" aria-current="page">Security</a>
+      <a class="nav-link" href="/faq.html">FAQ</a>
+      <a class="button button-small button-ghost" href="https://app.browseterm.puhtaeto.com">Open Browseterm <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-<main id="main">
-  <h1>Security</h1>
-  <p class="lede">
-    Browseterm is built around one rule: your machine is never reachable from the outside, and
-    Cloud never holds a copy of your workspace data.
-  </p>
+  <main class="install-main shell">
+    <div class="install-intro">
+      <span class="section-number">SECURITY</span>
+      <h1>Built around one rule.</h1>
+      <p>Your machine is never reachable from the outside, and Cloud never holds a copy of your
+      workspace data.</p>
+    </div>
 
-  <h2>Your machine only ever calls out</h2>
-  <p>
-    The Browseterm software on your machine opens a single outbound, encrypted connection to
-    Browseterm Cloud. Cloud can send commands over that already-open connection, but nothing on
-    Cloud — and nothing on the public internet — can open a new connection into your machine.
-    Your local management interface is never exposed publicly.
-  </p>
+    <div class="content-list">
+      <article class="content-item">
+        <h2>Your machine only ever calls out</h2>
+        <p>The Browseterm software on your machine opens a single outbound, encrypted connection
+        to Browseterm Cloud. Cloud can send commands over that already-open connection, but
+        nothing on Cloud — and nothing on the public internet — can open a new connection into
+        your machine. Your local management interface is never exposed publicly.</p>
+      </article>
 
-  <h2>Every device has its own credential</h2>
-  <p>
-    Each machine you register gets its own independent, revocable credential, scoped only to
-    that machine. No machine you control ever holds a shared or global credential that could
-    affect any other user's account or device.
-  </p>
+      <article class="content-item">
+        <h2>Every device has its own credential</h2>
+        <p>Each machine you register gets its own independent, revocable credential, scoped only
+        to that machine. No machine you control ever holds a shared or global credential that
+        could affect any other user's account or device.</p>
+      </article>
 
-  <h2>Terminal traffic is ticketed, not open</h2>
-  <p>
-    When you open a terminal in your browser, Cloud issues a short-lived, single-use ticket
-    bound to your account, your device, and that specific workspace. The ticket is required to
-    connect and expires quickly — possessing the connection URL alone is never enough.
-  </p>
+      <article class="content-item">
+        <h2>Terminal traffic is ticketed, not open</h2>
+        <p>When you open a terminal in your browser, Cloud issues a short-lived, single-use ticket
+        bound to your account, your device, and that specific workspace. The ticket is required to
+        connect and expires quickly — possessing the connection URL alone is never enough.</p>
+      </article>
 
-  <h2>Your workspace data stays on your machine</h2>
-  <p>
-    Workloads run entirely on the machine you registered. When you save a workspace so it can be
-    restored later, only the resulting saved image is stored — Cloud tracks metadata about your
-    devices, workspaces, and saved images; it does not run your workloads or hold a live copy of
-    your working files.
-  </p>
+      <article class="content-item">
+        <h2>Your workspace data stays on your machine</h2>
+        <p>Workloads run entirely on the machine you registered. When you save a workspace so it
+        can be restored later, only the resulting saved image is stored — Cloud tracks metadata
+        about your devices, workspaces, and saved images; it does not run your workloads or hold a
+        live copy of your working files.</p>
+      </article>
 
-  <h2>Reporting a security issue</h2>
-  <p>
-    If you believe you've found a security issue in Browseterm, please report it privately
-    rather than opening a public issue. Contact details will be published here before general
-    availability.
-  </p>
-</main>
+      <article class="content-item">
+        <h2>Reporting a security issue</h2>
+        <p>If you believe you've found a security issue in Browseterm, please report it privately
+        rather than opening a public issue. Contact details will be published here before general
+        availability.</p>
+      </article>
+    </div>
+  </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span>&copy; 2026 Browseterm.</span>
-    <span><a href="/security.html">Security</a> · <a href="/faq.html">FAQ</a></span>
-  </div>
-</footer>
-<script src="/assets/app.js"></script>
+  <footer class="footer shell">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span><span>browseterm</span></a>
+    <p>Part of <strong>Puhtaeto</strong> — pocket-sized software.</p>
+    <p>© <span id="year"></span> Puhtaeto</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,41 +1,22 @@
-/*
- * Browseterm marketing site — static only. No network requests, no login, no application
- * session. This file only does small client-side conveniences: marking the current nav link,
- * and copy-to-clipboard buttons on install command blocks.
- */
-(function () {
-  "use strict";
+const tabs = document.querySelectorAll('.os-tab');
+const panels = document.querySelectorAll('.install-panel');
 
-  function markCurrentNavLink() {
-    var here = window.location.pathname.replace(/\/index\.html$/, "/");
-    document.querySelectorAll(".nav-links a").forEach(function (link) {
-      var linkPath = link.getAttribute("href");
-      if (!linkPath) return;
-      if (linkPath === here || (here === "/" && linkPath === "/index.html")) {
-        link.setAttribute("aria-current", "page");
-      }
+tabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const selected = tab.dataset.os;
+    tabs.forEach((item) => {
+      const active = item === tab;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-selected', String(active));
     });
-  }
-
-  function wireCopyButtons() {
-    document.querySelectorAll("[data-copy-target]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        var targetId = button.getAttribute("data-copy-target");
-        var target = document.getElementById(targetId);
-        if (!target || !navigator.clipboard) return;
-        navigator.clipboard.writeText(target.textContent.trim()).then(function () {
-          var original = button.textContent;
-          button.textContent = "Copied!";
-          window.setTimeout(function () {
-            button.textContent = original;
-          }, 1500);
-        });
-      });
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    markCurrentNavLink();
-    wireCopyButtons();
+    panels.forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === selected));
   });
-})();
+});
+
+document.querySelectorAll('[data-copy]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    await navigator.clipboard.writeText(button.dataset.copy);
+    button.textContent = 'Copied';
+    setTimeout(() => { button.textContent = 'Copy'; }, 1500);
+  });
+});

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Install Browseterm on macOS, Windows, or Linux.">
+  <title>Install Browseterm</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23152a22'/%3E%3Cpath d='m17 21 11 11-11 11M32 43h15' fill='none' stroke='%23A8FBD3' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="install-page">
+  <div class="noise" aria-hidden="true"></div>
+  <header class="nav shell">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span>&gt;_</span></span><span>browseterm</span></a>
+    <nav aria-label="Primary navigation">
+      <a class="nav-link" href="/">Home</a>
+      <a class="button button-small button-ghost" href="https://app.browseterm.puhtaeto.com">Open Browseterm <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main class="install-main shell">
+    <div class="install-intro">
+      <span class="section-number">INSTALL BROWSETERM</span>
+      <h1>Connect your machine.</h1>
+      <p>Choose your operating system. The installer prepares the local runtime, registers the device, and starts the Browseterm agent.</p>
+    </div>
+    <div class="os-tabs" role="tablist" aria-label="Operating system">
+      <button class="os-tab active" role="tab" aria-selected="true" data-os="macos">macOS</button>
+      <button class="os-tab" role="tab" aria-selected="false" data-os="windows">Windows</button>
+      <button class="os-tab" role="tab" aria-selected="false" data-os="linux">Linux</button>
+    </div>
+    <section class="install-panel active" data-panel="macos">
+      <div><span class="panel-kicker">MACOS</span><h2>Desktop installer</h2><p>Install Browseterm, choose the resources to share, then sign in to connect this Mac.</p></div>
+      <div class="download-state"><span>Coming with the first desktop release</span><button disabled>Download for macOS</button></div>
+    </section>
+    <section class="install-panel" data-panel="windows">
+      <div><span class="panel-kicker">WINDOWS</span><h2>Desktop installer</h2><p>Install Browseterm, configure local resources, and register this Windows machine.</p></div>
+      <div class="download-state"><span>Coming with the first desktop release</span><button disabled>Download for Windows</button></div>
+    </section>
+    <section class="install-panel" data-panel="linux">
+      <div><span class="panel-kicker">LINUX</span><h2>Headless installer</h2><p>The Linux version runs without a desktop UI. Resource limits are configured through the CLI.</p></div>
+      <div class="code-block"><div><span>INSTALL COMMAND</span><button class="copy" type="button" data-copy="curl -fsSL https://browseterm.puhtaeto.com/install.sh | sh">Copy</button></div><code>curl -fsSL https://browseterm.puhtaeto.com/install.sh | sh</code><small>Installer will be enabled when the Linux package is released.</small></div>
+    </section>
+    <div class="after-install">
+      <span>AFTER INSTALLATION</span>
+      <ol><li><b>1</b><p><strong>Sign in</strong><small>Authenticate with your Browseterm account.</small></p></li><li><b>2</b><p><strong>Choose resources</strong><small>Set CPU, memory, and storage limits.</small></p></li><li><b>3</b><p><strong>Open Browseterm</strong><small>Create your first browser workspace.</small></p></li></ol>
+      <a class="button button-primary" href="https://app.browseterm.puhtaeto.com">Open Browseterm <span aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
