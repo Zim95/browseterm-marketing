@@ -137,6 +137,9 @@ h1 span { color: var(--orange); }
 .download-state { display: grid; gap: 12px; padding: 30px; border: 1px dashed #3a404c; border-radius: 11px; text-align: center; }
 .download-state span { color: #858c99; font-size: .85rem; }
 .download-state button { min-height: 48px; border: 0; border-radius: 8px; background: #232833; color: #777e8b; }
+/* A real, downloadable build - solid border instead of the "coming soon" dashed one, and the
+   .button-primary link inside already carries its own active styling. */
+.download-state.ready { border-style: solid; border-color: var(--line); }
 .code-block { border: 1px solid #303641; border-radius: 10px; overflow: hidden; background: #0a0d12; }
 .code-block > div { height: 43px; display: flex; align-items: center; justify-content: space-between; padding: 0 15px; border-bottom: 1px solid #292e38; color: #69717d; font: .63rem var(--mono); }
 .copy { color: var(--orange-soft); border: 0; background: transparent; cursor: pointer; font: .65rem var(--mono); }

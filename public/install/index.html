@@ -33,15 +33,15 @@
     </div>
     <section class="install-panel active" data-panel="macos">
       <div><span class="panel-kicker">MACOS</span><h2>Desktop installer</h2><p>Install Browseterm, choose the resources to share, then sign in to connect this Mac.</p></div>
-      <div class="download-state"><span>Coming with the first desktop release</span><button disabled>Download for macOS</button></div>
+      <div class="download-state ready"><a class="button button-primary" href="https://github.com/Zim95/browseterm-desktop/releases/latest/download/BrowseTerm-macOS.dmg">Download for macOS <span aria-hidden="true">↓</span></a><span>Unsigned build - right-click the app and choose "Open" the first time.</span></div>
     </section>
     <section class="install-panel" data-panel="windows">
       <div><span class="panel-kicker">WINDOWS</span><h2>Desktop installer</h2><p>Install Browseterm, configure local resources, and register this Windows machine.</p></div>
-      <div class="download-state"><span>Coming with the first desktop release</span><button disabled>Download for Windows</button></div>
+      <div class="download-state ready"><a class="button button-primary" href="https://github.com/Zim95/browseterm-desktop/releases/latest/download/BrowseTerm-Setup.exe">Download for Windows <span aria-hidden="true">↓</span></a><span>Unsigned build - Windows SmartScreen may warn; choose "More info" then "Run anyway".</span></div>
     </section>
     <section class="install-panel" data-panel="linux">
       <div><span class="panel-kicker">LINUX</span><h2>Headless installer</h2><p>The Linux version runs without a desktop UI. Resource limits are configured through the CLI.</p></div>
-      <div class="code-block"><div><span>INSTALL COMMAND</span><button class="copy" type="button" data-copy="curl -fsSL https://browseterm.puhtaeto.com/install.sh | sh">Copy</button></div><code>curl -fsSL https://browseterm.puhtaeto.com/install.sh | sh</code><small>Installer will be enabled when the Linux package is released.</small></div>
+      <div class="code-block"><div><span>INSTALL COMMAND</span><button class="copy" type="button" data-copy="sudo curl -fsSL -o /usr/local/bin/browseterm https://github.com/Zim95/browseterm-desktop/releases/latest/download/browseterm-cli-linux && sudo chmod +x /usr/local/bin/browseterm">Copy</button></div><code>sudo curl -fsSL -o /usr/local/bin/browseterm https://github.com/Zim95/browseterm-desktop/releases/latest/download/browseterm-cli-linux &amp;&amp; sudo chmod +x /usr/local/bin/browseterm</code><small>Downloads the latest release straight from GitHub and installs it to /usr/local/bin.</small></div>
       <div class="after-install cli-steps">
         <span>SIGN IN &amp; CHOOSE RESOURCES</span>
         <ol>
