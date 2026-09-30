@@ -23,8 +23,8 @@ button { font: inherit; }
 .nav { height: 88px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.08); }
 .nav nav { display: flex; align-items: center; gap: 30px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -.03em; font-size: 1.18rem; }
-.brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #3a3f4b; background: #11151e; border-radius: 10px; transform: rotate(-4deg); }
-.brand-mark span { color: var(--orange); font: 600 .85rem var(--mono); transform: rotate(4deg); }
+.brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #3a3f4b; background: #11151e; border-radius: 10px; overflow: hidden; transform: rotate(-4deg); }
+.brand-mark img { width: 100%; height: 100%; display: block; transform: rotate(4deg); }
 .nav-link { color: #bcc1ca; font-size: .94rem; transition: color .2s ease; }
 .nav-link:hover { color: white; }
 .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 0 22px; border-radius: 9px; font-weight: 600; border: 1px solid transparent; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
@@ -218,7 +218,6 @@ body { background: var(--bg); }
 .noise { opacity: .07; }
 .nav { border-bottom-color: #dce9e2; }
 .brand-mark { background: #183329; border-color: #244d3e; box-shadow: 0 8px 22px rgba(28, 91, 65, .12); }
-.brand-mark span { color: #A8FBD3; }
 .nav-link { color: #607169; }
 .nav-link:hover { color: #173128; }
 .button-primary { background: #A8FBD3; color: #173128; box-shadow: 0 14px 38px rgba(77, 198, 139, .22); }
