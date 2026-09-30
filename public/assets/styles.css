@@ -210,7 +210,7 @@ h1 span { color: var(--orange); }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
-/* Browseterm's existing mint-green and white product palette. */
+/* BrowseTerm's existing mint-green and white product palette. */
 :root {
   --bg: #f7fbf9;
   --surface: #ffffff;
@@ -240,7 +240,7 @@ h1 span { color: #3cb87b; }
 .platforms { color: #76877f; }
 .platforms i { background: #aac0b5; }
 
-/* Keep the actual browser terminal dark for contrast, using Browseterm mint accents. */
+/* Keep the actual browser terminal dark for contrast, using BrowseTerm mint accents. */
 .terminal-glow { background: rgba(105, 229, 168, .24); }
 .terminal { border-color: #315647; background: rgba(15, 27, 22, .98); box-shadow: 0 40px 90px rgba(28, 77, 57, .24); }
 .terminal-bar { border-bottom-color: #29443a; background: #172b23; color: #93a99f; }
