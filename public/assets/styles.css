@@ -150,6 +150,12 @@ h1 span { color: var(--orange); }
 .after-install li p { display: grid; margin: 0; }
 .after-install li small { color: #737b88; }
 
+/* Linux install panel's CLI-specific walkthrough - nested inside .install-panel's own
+   two-column grid, so it needs to span both columns on its own row rather than being squeezed
+   into a single cell. */
+.install-panel .cli-steps { grid-column: 1 / -1; margin-top: 30px; }
+.cli-steps .code-block + .code-block { margin-top: 16px; }
+
 /* FAQ / Security content pages - reuses the same palette/spacing tokens as install-panel. */
 .content-list { margin-top: 55px; display: grid; gap: 18px; }
 .content-item { padding: 34px 38px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); }
